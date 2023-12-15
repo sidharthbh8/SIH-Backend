@@ -2,7 +2,9 @@ const express = require('express')
 const hbs = require('hbs')
 const path = require('path')
 const lawyerRouter = require('./routes/lawyersRoute')
+const ocrRouter = require('./routes/ocrRoute')
 const app = express()
+require('dotenv').config();
 
 const publicDirectoryPath = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname, '../views')
@@ -16,6 +18,7 @@ const port = process.env.PORT || 3000
 
 app.use(express.json())
 app.use(lawyerRouter)
+app.use(ocrRouter)
 
 app.listen(port, ()=>{ 
     console.log(`server running at port ${port}`);

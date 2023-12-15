@@ -1,4 +1,5 @@
 const { getJson } = require("serpapi");
+require('dotenv').config();
 
 const searchLawyersNearby = (latitude, longitude) => {
     return new Promise((resolve, reject) => {
